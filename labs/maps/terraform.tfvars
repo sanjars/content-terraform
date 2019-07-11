@@ -2,14 +2,25 @@
 # dev values are: dev_blog, ghost:latest, 2368, 8080
 
 
-container_name = "blog"
+container_name = {
+    dev = "dev_blog"
+    prod = "prod_blog"
+}
 
-image = "ghost:latest"
+image = {
+    dev = "ghost:latest"
+    prod = "ghost:alpine"
+}
+
+int_port = {
+    dev = "2368"
+    prod = "2368"
+}
 
 
-int_port = "2368"
-
-
-ext_port = "8080"
+ext_port = {
+    dev = "8080"
+    prod = "80"
+}
 
 
