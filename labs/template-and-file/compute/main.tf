@@ -1,7 +1,7 @@
 #-----compute/main.tf
 
 data "aws_ami" "server_ami" {
-  owners = ["amazon"]
+  owners      = ["amazon"]
   most_recent = true
 
   filter {
@@ -20,8 +20,9 @@ resource "aws_key_pair" "tf_auth" {
 # Template file goes here
 
 data "template_file" "user-init" {
-  count = 2
+  count    = 2
   template = "${file("${path.module}/userdata.tpl")}"
+
   vars {
     message = "hello from the server"
   }
